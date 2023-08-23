@@ -1,0 +1,16 @@
+<!-- New Service Listing Form -->
+<div class="new-listing-form">
+  <h2>Create a New Service Listing</h2>
+  <%= form_for @service_listing do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <!-- Add fields for other attributes of the service listing -->
+    <%= f.submit "Create Listing" %>
+  <% end %>
+</div>

@@ -1,0 +1,20 @@
+<!-- app/views/messages/index.html.erb -->
+<div class="messages-container">
+  <h2>Messages</h2>
+  <div class="received-messages">
+    <h3>Received Messages</h3>
+    <ul class="message-list">
+      <% @received_messages.each do |message| %>
+        <li><%= link_to message.sender.username, message_path(message) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="sent-messages">
+    <h3>Sent Messages</h3>
+    <ul class="message-list">
+      <% @sent_messages.each do |message| %>
+        <li><%= link_to message.receiver.username, message_path(message) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

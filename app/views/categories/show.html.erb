@@ -1,0 +1,19 @@
+<!-- Category Details Page -->
+<div class="category-details">
+  <h2><%= @category.name %> Services</h2>
+  <div class="service-list">
+    <% @category.service_listings.each do |service_listing| %>
+      <div class="service">
+        <div class="service-info">
+          <h3><%= service_listing.title %></h3>
+          <p><%= service_listing.description %></p>
+        </div>
+        <div class="service-actions">
+          <%= link_to "View Professional", professional_path(service_listing.professional), class: "btn btn-primary" %>
+          <!-- Add a button/link to book the service -->
+          <%= link_to "Book Service", new_appointment_path(professional_id: service_listing.professional.id), class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

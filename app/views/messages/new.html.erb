@@ -1,0 +1,12 @@
+<!-- app/views/messages/new.html.erb -->
+<div class="new-message-form">
+  <h2>Send Message to <%= @receiver.username %></h2>
+  <%= form_for @message do |f| %>
+    <div class="field">
+      <%= f.label :content %>
+      <%= f.text_area :content, rows: 4 %>
+    </div>
+    <%= hidden_field_tag :receiver_id, @receiver.id %>
+    <%= f.submit "Send Message" %>
+  <% end %>
+</div>

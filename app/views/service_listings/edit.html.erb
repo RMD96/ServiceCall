@@ -1,0 +1,16 @@
+<!-- app/views/service_listings/edit.html.erb -->
+<div class="edit-service-listing">
+  <h2>Edit Service Listing</h2>
+  <%= form_for @service_listing, url: service_listing_path(@service_listing), method: :patch do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: 4 %>
+    </div>
+    <!-- Add more fields as needed -->
+    <%= f.submit "Update Service Listing" %>
+  <% end %>
+</div>

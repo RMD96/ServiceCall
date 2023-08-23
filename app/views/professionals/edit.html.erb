@@ -1,0 +1,11 @@
+<!-- app/views/professionals/edit.html.erb -->
+<div class="edit-professional-profile">
+  <h2>Edit Your Professional Profile</h2>
+  <%= form_for @professional, url: professional_path(@professional), method: :patch do |f| %>
+    <div class="field">
+      <%= f.label :bio %>
+      <%= f.text_area :bio, rows: 4 %>
+    </div>
+    <%= f.submit "Update Profile" %>
+  <% end %>
+</div>

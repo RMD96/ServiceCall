@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Run yarn build --watch in the background
+yarn build --watch &
+
+# Start Rails server
+rails server

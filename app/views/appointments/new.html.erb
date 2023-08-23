@@ -1,0 +1,14 @@
+<!-- app/views/appointments/new.html.erb -->
+<div class="new-appointment-form">
+  <h2>Book Service</h2>
+  <p>Choose a date and time for your appointment with <%= @professional.user.username %>.</p>
+  <%= form_for @appointment, url: appointments_path do |f| %>
+    <%= hidden_field_tag :professional_id, @professional.id %>
+    <%= hidden_field_tag :service_listing_id, @service_listing.id %>
+    <div class="field">
+      <%= f.label :datetime %>
+      <%= f.datetime_select :datetime %>
+    </div>
+    <%= f.submit "Book Appointment" %>
+  <% end %>
+</div>

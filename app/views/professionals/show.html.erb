@@ -1,0 +1,17 @@
+<!-- Professional Profile Page -->
+<div class="professional-profile">
+  <h2><%= @professional.user.username %></h2>
+  <p><%= @professional.bio %></p>
+  <h3>Services Offered</h3>
+  <ul class="service-list">
+    <% @professional.service_listings.each do |service_listing| %>
+      <li>
+        <h4><%= service_listing.title %></h4>
+        <p><%= service_listing.description %></p>
+        <!-- Add a link to book the service or send a message to the professional -->
+        <%= link_to "Book Service", new_appointment_path(professional_id: @professional.id) %>
+        <%= link_to "Send Message", new_message_path(receiver_id: @professional.user.id) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

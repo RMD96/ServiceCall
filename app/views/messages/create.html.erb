@@ -1,0 +1,10 @@
+<!-- app/views/messages/create.html.erb -->
+<div class="message-sent">
+  <h2>Message Sent</h2>
+  <p>Your message has been successfully sent.</p>
+  <div class="message-details">
+    <p><strong>Receiver:</strong> <%= @receiver.username %></p>
+    <p><strong>Message:</strong> <%= @message.content %></p>
+  </div>
+  <p>Thank you for using our messaging system!</p>
+</div>

@@ -1,0 +1,9 @@
+<!-- Categories Listing Page -->
+<div class="categories-container">
+  <h2>Service Categories</h2>
+  <ul class="category-list">
+    <% @categories.each do |category| %>
+      <li><%= link_to category.name, category_path(category) %></li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,17 @@
+<!-- app/views/ratings/new.html.erb -->
+<div class="new-rating-form">
+  <h2>Submit a Rating and Review</h2>
+  <p>Share your experience with the professional by providing a rating and review.</p>
+  <%= form_for @rating do |f| %>
+    <div class="field">
+      <%= f.label :rating %>
+      <%= f.select :rating, options_for_select(1..5) %>
+    </div>
+    <div class="field">
+      <%= f.label :comment %>
+      <%= f.text_area :comment, rows: 4 %>
+    </div>
+    <%= hidden_field_tag :professional_id, @professional.id %>
+    <%= f.submit "Submit Rating" %>
+  <% end %>
+</div>

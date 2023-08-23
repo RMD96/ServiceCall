@@ -1,0 +1,11 @@
+<!-- app/views/appointments/create.html.erb -->
+<div class="appointment-created">
+  <h2>Appointment Successfully Booked</h2>
+  <p>Your appointment has been confirmed with the professional.</p>
+  <div class="appointment-details">
+    <p><strong>Professional:</strong> <%= @appointment.professional.user.username %></p>
+    <p><strong>Service:</strong> <%= @appointment.professional.service_listings.find_by(id: @appointment.service_listing_id).title %></p>
+    <p><strong>Date and Time:</strong> <%= @appointment.datetime.strftime('%B %d, %Y at %I:%M %p') %></p>
+  </div>
+  <p>Thank you for using ServiceCall!</p>
+</div>
